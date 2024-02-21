@@ -1,0 +1,14 @@
+<!-- ros package -->
+
+<package format="2">
+    <name>lccvros</name>
+    <version>0.1</version>
+    <description>ROS package</description>
+    <maintainer email="roger.pi@udg.edu">Roger Pi</maintainer>
+    <license>BSD</license>
+    <buildtool_depend>catkin</buildtool_depend>
+    <build_depend>roscpp</build_depend>
+    <depend>image_transport</depend>
+    <depend>cv_bridge</depend>
+    <depend>sensor_msgs</depend>
+</package>
