@@ -19,7 +19,6 @@ private:
     image_transport::Publisher lccv_pub_;
     image_transport::ImageTransport it_;
 
-    Lccv lccv_;
     ros::NodeHandle nh_;
 
     std::unique_ptr<lccv::PiCamera> cam_;

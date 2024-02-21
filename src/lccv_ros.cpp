@@ -1,4 +1,7 @@
 #include "lccv_ros.h"
+#include <opencv2/opencv.hpp>
+#include <cv_bridge/cv_bridge.h>
+
 
 LccvRos::LccvRos(ros::NodeHandle &nh, int framerate) : nh_(nh), it_(nh), framerate_(framerate)
 {
@@ -7,7 +10,7 @@ LccvRos::LccvRos(ros::NodeHandle &nh, int framerate) : nh_(nh), it_(nh), framera
     cam_ = std::make_unique<lccv::PiCamera>();
     cam_->options->photo_width = 4056;
     cam_->options->photo_height = 3040;
-    cam.options->verbose=true;
+    cam_->options->verbose=true;
 }
 
 LccvRos::~LccvRos()
@@ -28,8 +31,7 @@ void LccvRos::run()
         {
             ROS_ERROR("Camera error");
         }
-        cam_->encoding
-        cv_image.encoding = "rgb8";
+        cv_image.encoding = "bgr8";
         msg = cv_image.toImageMsg();
         lccv_pub_.publish(msg);
         loop_rate.sleep();

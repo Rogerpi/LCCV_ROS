@@ -1,8 +1,8 @@
 <!-- ros package -->
 
 <package format="2">
-    <name>lccvros</name>
-    <version>0.1</version>
+    <name>lccv_ros</name>
+    <version>1.0.0</version>
     <description>ROS package</description>
     <maintainer email="roger.pi@udg.edu">Roger Pi</maintainer>
     <license>BSD</license>
